@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+
+    <div></div>
+
+
+    <script>
+
+        // Async / Await is modern javascript  feature which makes asaynchronous code simpler to write. It makes easier to work with Promises and perform the task async'lly.
+
+        // async keyword is used to create an asynchronous function and await is used wait till the asynchronous task is completed.
+
+let news = [
+                {newsTitle: 'First Title', content: 'This is the First content'},
+                {newsTitle: 'Second Title', content: 'This is the Second content'},
+                {newsTitle: 'Third Title', content: 'This is the Third content'},
+            ]
+
+
+            
+            const showNews = () => {
+                setTimeout(() => {
+                    let result = ''
+                    news.forEach(post => {
+                        result += `<li>${post.newsTitle}</li>`
+                    })
+                    document.querySelector('div').innerHTML = result
+                }, 3000)
+            }
+
+            showNews()    //this is Asynchronous...
+
+            // Create function addNews that  returns a promise
+            const addNews = (newsDate) => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        news.push(newsDate)
+                        let error = false
+                        if(!error) {
+                            resolve()
+                        }
+                        else {
+                            reject('Error : Something went wrong')
+                        }
+                    }, 4000);
+                })
+            }
+
+            // const asyncFun = async () => {
+            //     await addNews({newsTitle: 'Fourth', content: 'This is the Fourth content'})
+            //     showNews()
+            // }
+
+
+            // async function with Error Handling using try-catch block
+            const asyncFun = async () => {
+                try {
+                await addNews({newsTitle: 'Fourth', content: 'This is the Fourth content'})
+                showNews()
+                }
+                catch (err) {
+                    document.write(err)
+                }
+            }
+
+            asyncFun()
+
+            
+
+            // // function declaration..
+            // async function funcName() {
+            //     // function declaration
+            // }
+
+            // const funcNameEx = async function() {
+            //     // function express
+            // }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        // SI = PTR/100
+        let p = prompt("Enter the Principle")  // 10,00
+        let t = prompt("Enter the time in year")  //2
+        let r = prompt("Enter the rate in %")  //10%
+
+        // let SI = (p * t * r) / 100   
+        let amount = +p + SI // // ("10000" x "2" x "10") / 100 = 2000 (Number)
+        document.write("The Simple Interest is "+ SI +" and total amount is "+ amount +" when principle is "+ p +", time in years is "+ t +" yeras and rate of interst is "+ r +" %.")
+
+
+        //  The Simple Interest is 2000 and total amount is 12000 when principle is 10000, time in years is 2 yeras and rate of interst is 10%.
+
+        // When we try to take any inputs from input field at that time string datatype will be stored
+
+
+        ////////////////////
+
+        // Templete Literal:
+
+        console.log(`Ram said, "His dog is very nice"`)
+
+        // document.write(`The Simple Interest is ${SI} and total amount is ${amount} when principle is ${p}, time in years is ${t} yeras and rate of interst is ${r} %.`)
+
+        document.write(`The Simple Interest is ${(p * t * r) / 100} and total amount is ${amount} when principle is ${p}, time in years is ${t} yeras and rate of interst is ${r} %.`)
+
+        // Write a program to display BMI.
+
+
+        
+
+    </script>
+</body>
+</html>

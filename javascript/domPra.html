@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #e4dddd;
+        }
+        h1 {
+            color: rgb(72, 72, 209);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        #btn1, #btn2 {
+            padding: 8px;
+            width: 90px;
+            background: #5e5858;
+            color: white;
+            border: 3px solid rgb(88, 88, 179);
+            border-radius: 4px;
+            box-shadow: 0px 0px 4px 1px rgb(30, 28, 28);
+            margin: 20px;
+            cursor: pointer;
+        }
+        p {
+            color: rgb(81, 218, 159);
+            background: #828080;
+            padding: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 2px solid green;
+            border-radius: 5px;
+        }
+        hr {
+            background: rgb(197, 197, 195);
+            height: 5px;
+            border: 2px solid rgb(237, 232, 232);
+        }
+        .phot {
+        
+
+        }
+
+        .phot, img {
+            height: 30vh;
+            width: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To Pokhara</h1>
+    <hr>
+    <div class="phot">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Pokhara-valley-nepal.jpg">
+
+    </div>
+    
+    <button id="btn1">show</button>
+    <button id="btn2">hide</button>
+
+    <script>
+        const head = document.querySelector('h1')
+        const body = document.querySelector('body')
+        const btn = document.querySelector('#btn1')
+        const btn2 = document.querySelector('#btn2')
+        // console.log(btn)
+        const para = document.createElement('p')
+        para.innerText = 'Pokhara is a city on Phewa Lake, in central Nepal. It’s known as a gateway to the Annapurna Circuit, a popular trail in the Himalayas. Tal Barahi Temple, a 2-story pagoda, sits on an island in the lake. On the eastern shore, the Lakeside district has yoga centers and restaurants. In the city’s south, the International Mountain Museum has exhibits on the history of mountaineering and the people of the Himalayas.'
+        
+        // console.log(para)
+        
+        btn2.addEventListener('click', () => {
+            para.remove()
+        })
+        
+        btn.addEventListener('click', () => {
+            body.appendChild(para)        
+        })
+
+    </script>
+</body>
+</html>

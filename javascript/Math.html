@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math methods are in built methods in javascript that helps developer to performs mathematical operations.
+        // Math.floor -> nearest integer
+        // document.write(`${Math.floor(5.99)} <br>`)  // 5
+        // // Math.ceil
+        // document.write(`${Math.ceil(5.1)} <br>`)  // 6
+        // // Math.round
+        // document.write(`${Math.round(5.5)} <br>`)  // 6
+        // document.write(`${Math.round(5.1)} <br>`)  // 5
+        // // Math.trunc
+        // document.write(`${Math.trunc(10.01)} <br>`)  // 10   // it is like to 'floor'.
+        // // Math.random
+        // let rand = Math.random()
+        // document.write(`${rand} <br>`) // 0 to 1
+        // // .toFixed()
+        // document.write(`${rand.toFixed(2)} <br>`)  
+        // // Math.max()
+        // document.write(`${Math.max(1, 5, 6, 7)} <br>`)  // 7
+        // // Math.min
+        // document.write(`${Math.min(1, -89, 0, 5, 6, 7)} <br>`)  // 89
+        // // Math.PI
+        // document.write(`${Math.PI} <br>`)
+        // // Math.pow
+        // document.write(`${Math.pow(2, 3)} <br>`)  // 8
+        // // Math.sqrt
+        // document.write(`${Math.sqrt(25)} <br><br><br><br>`)  // 5
+
+
+        // // Generate random number between 1 to 6
+        // let ran = Math.trunc((Math.random() * 6) + 1)
+        // // 
+        // document.write(ran)
+        
+        // OTP generate:
+        // toString().padStart(4, '0') = it is use for putting 0 before single number 
+        let otp = Math.trunc((Math.random() * 9999) + 1)
+        document.write(otp.toString().padStart(4, '0'))
+
+    </script>
+</body>
+</html>

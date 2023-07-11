@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Methods</title>
+</head>
+<body>
+
+    <h1 id="clock" style="color:rgb(132, 230, 14)"></h1>
+
+    <script>
+        // Javascript have inbuilt date object and it has own usefull methods.
+
+        const date = new Date()
+        // console.log(date)
+        // to get full year
+        // document.write(`${date.getFullYear()} <br>`)
+        // // to get month
+        // document.write(`${date.getMonth() + 1} <br>`)
+        // // to get date
+        // document.write(`${date.getDate()} <br>`)
+        // // to get weekdays (sunday, monday....)
+        // document.write(`${date.getDay() + 1} <br>`)
+        
+        // WAP to display date in 2023-jan-11, sunday
+
+        // const year = date.getFullYear()
+        // const mon = date.getMonth()
+        // const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        // const day = date.getDate()
+        // const today = date.getDay()
+        // const todayArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+        // document.write(`Date: ${year}-${month[mon]}-${day}, ${todayArr[today]}`)
+
+
+        // to get hours
+        // document.write(date.getHours())   // 0 - 23
+        // document.write(`<br>`) 
+        // // to get minutes
+        // document.write(date.getMinutes())   // 0 - 59
+        // document.write(`<br>`) 
+        // // to get seconds
+        // document.write(date.getSeconds())  // 0 - 59
+        // document.write(`<br>`) 
+
+        // const hour = date.getHours()
+        // const min = date.getMinutes()
+        // const sec = date.getSeconds()
+
+        // document.write(`Time: ${hour}-${min}-${sec}`)
+        
+
+        // to get miliseconds
+        // document.write(date.getMilliseconds())  //  999
+        // document.write(`<br>`) 
+
+        // // it shows the seconds from 1 Jan 1970 to now
+        // document.write(date.getTime()) 
+
+
+        // Timing Events in Javascript
+        // SetTimeOut
+        // console.log(`Coundown 1 started`)
+        // setTimeout(() => console.log(`Coundown 2 started`), 5000)
+        // console.log(`Coundown 3 started`)
+        // console.log(`Coundown 4 started`)
+
+        // // SetInterval
+        setInterval(() => console.log(`Hello World`), 1000)
+
+        const displaySection = document.getElementById('clock')
+
+        const clock = () => {
+            const now = new Date()
+            const hours = now.getHours()
+            // converting into 12 hours format...
+            // 20 % 12 = 8
+            // 0 % 12 = 0 || 12 
+            const hour12Format = hours % 12 || 12
+            const minutes = now.getMinutes()
+            const seconds = now.getSeconds()
+            // const zero = seconds.toString().padStart(2, '0')
+            // document.write(`${hours}:${minutes}:${seconds}<br>`)
+            displaySection.innerText = `${hour12Format.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${(hours > 12 ? `Pm`:`Am`)}`
+
+        }
+        setInterval(clock, 1000)
+
+
+
+        // other way...
+        // setInterval(() => {
+        //     const now = new Date()
+        //     const hours = now.getHours()
+        //     const minutes = now.getMinutes()
+        //     const seconds = now.getSeconds()
+        //     document.write(`${hours}:${minutes}:${seconds}`)
+        // }, 1000)
+
+        
+        
+        // toString().padStart(4, '0') = it is use for putting 0 before single number 
+
+
+    </script>
+</body>
+</html>

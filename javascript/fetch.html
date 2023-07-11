@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+
+    <input type="number" placeholder="Enter the id" class="postIdInput"/><button class="btn">Fetch Data</button>
+
+    <p>User Id:</p>
+    <span class="uid"></span>
+    <p>Id:</p>
+    <span class="id"></span>
+    <p>Title:</p>
+    <span class="title"></span>
+    <p>Body:</p>
+    <span class="body"></span>
+
+
+    <script>
+
+        // fetch -> Fetch is an in-built javascript function that is used for HTTP requests like POST, PUT, GET, DELETE. Fetch returns a Promise
+
+        // fetch('API_URL', options{in the form of object})
+
+        // We learn Get method
+        // jsonplaceholder.com -> This is a site for API data fetching.
+
+        // fetch(`https://jsonplaceholder.typicode.com/posts`)
+        // .then(response => response.json())
+        // .then(data => document.write(data[0].body))
+
+
+        const fetchbtn = document.querySelector('.btn')
+        const uid = document.querySelector('.uid')
+        const id = document.querySelector('.id')
+        const title = document.querySelector('.title')
+        const body = document.querySelector('.body')
+        const postIdInput = document.querySelector('.postIdInput')
+
+        fetchbtn.addEventListener('click', () => {
+            const postIdValue = postIdInput.value
+            fetch(`https://jsonplaceholder.typicode.com/posts/${postIdValue}`)
+            .then(res => res.json())
+            .then(data => {
+                uid.textContent = data.userId
+                id.textContent = data.id
+                title.textContent = data.title
+                body.textContent = data.body 
+            })
+            .catch(err => console.log(err))
+        })
+
+
+
+    </script>
+    
+</body>
+</html>

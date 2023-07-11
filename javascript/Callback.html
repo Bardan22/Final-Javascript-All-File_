@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+
+    <div></div>
+
+    <script>
+        /*
+        // Synchronus programming is line by line execution of code...
+        // Asynchronus task ?- search
+
+        Javascript has single threaded model of execution.
+        //  
+        // 
+        // 
+        // Code to be executed after the data has been fetched from the server
+        // 
+        // 
+        // 
+
+        // There are three major ways to achive asynchronous programming in javascript.
+        // 1. CallBack Function
+        // 2. Promises
+        // 3. Async / Await
+        
+        // file handaling in javascript....search on net
+
+
+        */ 
+
+            let news = [
+                {newsTitle: 'First Title', content: 'This is the First content'},
+                {newsTitle: 'Second Title', content: 'This is the Second content'},
+                {newsTitle: 'Third Title', content: 'This is the Third content'},
+            ]
+
+            const showNews = () => {
+                setTimeout(() => {
+                    let result = ''
+                    news.forEach(post => {
+                        result += `<li>${post.newsTitle}</li>`
+                        // result = result + `<li>${post.newsTitle}</li>`
+                    })
+                    // iteration...
+                    // 1 = '' + <li>First Title</li>
+                    // 2 = <li>First Title</li> + <li>Second Title</li>
+                    // 3= <li>First Title</li> + <li>Second Title</li> + <li>Third Title</li>
+                    // result = <li>First Title</li> + <li>Second Title</li> + <li>Third Title</li>
+                    document.querySelector('div').innerHTML = result
+                }, 1000)
+            }
+            showNews()
+
+        // 1. CallBack Function:
+
+            // Mistake way of CallBack Function...  This is bad User Experiance 
+            // adding 
+            // const addNews = (newsData) => {
+            //     setTimeout(() => {
+            //         news.push(newsData)
+            //         console.log(news)
+            //     }, 4000)
+            // }
+            addNews({newsTitle: 'Fourth', content: 'This is the Fourth content'})
+
+            // Proper way of Callback Function..
+
+            // CallBack hell or Pyramid of Doom...
+
+            const addNews = (newsData, callBackFuc) => {
+                setTimeout(() => {
+                    news.push(newsData)
+                    callBackFuc()
+                }, 2000);
+            }
+
+            addNews({newsTitle: 'Fourth Title', content: 'This is the fourth content'}, showNews)
+
+
+
+            // callback function for asynchronus programming  = research it ...
+
+
+
+
+    </script>
+    
+</body>
+</html>

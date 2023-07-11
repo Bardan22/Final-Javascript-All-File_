@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <div></div>
+
+    <script>
+
+        // Promises is an in built object which can represent eventual completion or failure of any asynchronous operations. To solve the drawbacks of using callback function for async task, promises are used. Promises makes async code much more readble. Error handling is also easier in promise.
+
+        // There three major states of Promises
+        // Pending
+        // Resolved
+        // Reject
+
+        let news = [
+                {newsTitle: 'First Title', content: 'This is the First content'},
+                {newsTitle: 'Second Title', content: 'This is the Second content'},
+                {newsTitle: 'Third Title', content: 'This is the Third content'},
+            ]
+
+
+            
+            const showNews = () => {
+                setTimeout(() => {
+                    let result = ''
+                    news.forEach(post => {
+                        result += `<li>${post.newsTitle}</li>`
+                    })
+                    document.querySelector('div').innerHTML = result
+                }, 3000)
+            }
+
+            showNews()    //this is Asynchronous...
+
+            // Create function addNews that  returns a promise
+            const addNews = (newsDate) => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        news.push(newsDate)
+                        let error = false
+                        if(!error) {
+                            resolve()
+                        }
+                        else {
+                            reject('Error : Something went wrong')
+                        }
+                    }, 4000);
+                })
+            }
+
+
+            addNews({newsTitle: 'Fourth', content: 'This is the Fourth content'})
+            .then(showNews)
+            .then(alert('News Fetched Sucessfully'))
+            .catch(err => console.log(err))
+
+
+            // Note: Creating a promise is not done most of the time. Developer tends to work with pre existing promises. Developer either use library, frmework or methods that returns a promise.
+
+            // For eg: Fetch function, axios (library)
+            // window.fetch(`API.com`).then().catch()
+    </script>
+    
+</body>
+</html>

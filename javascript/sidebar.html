@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- font awesome 4.7.0 cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 520;
+        }
+
+        
+
+        .side {
+            transform: translateX(-85%);
+            transition-duration: 600ms;
+            width: 20%;
+            background: rgb(149, 149, 149);
+            padding: 20px;
+        }
+
+        .model.active {
+            transform: translateX(252px);
+            transition-duration: 600ms;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 5%;
+        }
+
+        .row {
+            color: white;
+            list-style: none;
+            margin: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .model {
+            color: rgb(255, 255, 255);
+            height: 25px;
+            width: 25px;
+            position: fixed;
+            margin-left: 10px;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 5px;
+            cursor: pointer;
+            background: #abaaaa;
+            border-radius: 30px;
+            font-weight: bold;
+            transform: translateX(0);
+            transition-duration: 600ms;
+        }
+
+        .side.active {
+            transform: translateX(0);
+            transition-duration: 600ms;            
+        }
+
+        .barbox{
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .overlay {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            top: 0%;
+            position: fixed;
+            z-index: -1;
+            /* opacity: 0; */
+        }
+
+        .realmodel {
+            border-radius: 20px;
+            margin-top: 15%;
+            margin-left: 10%;
+            padding: 20px;
+            height: 40%;
+            width: 300px;
+            background: rgb(255, 255, 255);
+            color: rgb(46, 46, 46);
+            text-align: center;
+            box-shadow: 0px 2px 9px 5px;
+            transform: translateX(-100%);
+        }
+
+        .realmodel {
+            position: absolute;
+            transform: translateX(-150%);
+        }
+
+        /* .modalX {
+            margin-left: 95%;
+            background: #161616;
+            height: 26px;
+            width: 26px;
+            border-radius: 20px;
+            padding: 4px;
+            color: white;
+            cursor: pointer;
+        } */
+
+        /* .content {
+            margin-top: 20px;
+            padding: 10px;
+            margin: 35px;
+            text-align: center;
+        } */
+
+        .btn{
+            cursor: pointer;
+            /* height: 30px;
+            width: 60px;
+            background: #000;
+            color: white;
+            margin: 10px; */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="barbox">
+        
+        <div class="side">
+            <h1>Sidebar</h1>
+            <nav class="row">
+                <li class="btn" onclick="boxmodal()">Modal</li>
+                <li>Accordion</li>
+                <li>Toast</li>
+            </nav>
+
+        </div>
+        <div class="model"><i class="fa fa-chevron-right"></i></div>
+        
+
+        <!-- <button type="button" class="btn">Click me</button> -->
+    </div>
+        <div class="overlay"></div>
+        <div class="realmodel">
+            <!-- <i class="fa fa-times modalX" onclick="modalicon()"></i> -->
+
+            <div class="head">
+                <h2>Hi, Model</h2>
+            </div>
+            <div class="para">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sint fuga recusandae illo iste voluptatem autem natus molestiae ut inventore.</p>
+            </div>
+            
+        </div>
+            
+    </div>
+        
+   
+    
+
+
+
+
+    <!-- Model
+    sidebar
+    accordion
+    toast -->
+
+    <script>
+
+        const btn = document.querySelector('.model')
+        const sidebar = document.querySelector('.side')
+        const show = document.querySelector('p')
+        const iconbtn = document.querySelector('.fa')
+
+
+        
+        btn.addEventListener('click', () => {
+           if(sidebar.classList.toggle('active') & btn.classList.toggle('active') ){
+            iconbtn.classList.remove('fa-chevron-right')
+            iconbtn.classList.add('fa-chevron-left')
+            }
+            else {
+            iconbtn.classList.remove('fa-chevron-left')
+            iconbtn.classList.add('fa-chevron-right')
+            }
+        })
+
+
+
+    </script>
+
+</body>
+</html>

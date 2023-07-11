@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sub-btn">-</button>
+    <h2>0</h2>
+    <button id="add-btn">+</button>
+    <br> <br>
+    <button id="reset">Reset</button>
+
+
+    <script>
+
+        const btn1 = document.querySelector('#sub-btn')
+        const btn2 = document.querySelector('#add-btn')
+        const viewCount = document.querySelector('h2')
+        const reset = document.querySelector('#reset')
+        // console.log(head)
+
+        let count = 0
+        btn2.addEventListener('click', () => {
+            count++
+            viewCount.textContent = count
+        })
+
+        
+        // let count = 0
+        btn1.addEventListener('click', () => {
+            count--
+            viewCount.textContent = count
+        })
+
+        reset.addEventListener('click', () => {
+            count = 0
+            viewCount.textContent = 0
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <style>
+        #time {
+            height: 40%;
+            width: 40%;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">
+        <span class="hour">00</span>:
+        <span class="minutes">00</span>:
+        <span class="seconds">00</span>:
+        <span class="milisec">000</span>
+    </div>
+    <br><br>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+<script>
+
+    const time0 = document.querySelector('#time')
+    const hour = document.querySelector('.hour')
+    const minute = document.querySelector('.minutes')
+    const sec = document.querySelector('.seconds')
+    const milisec = document.querySelector('.milisec')
+
+    const startbtn = document.querySelector('#start')
+    const stopbtn = document.querySelector('#stop')
+    const resetbtn = document.querySelector('#reset')
+
+
+    const watch = () => {
+        // miliseconds.......
+        let mili = 0
+        const milisecond = () => {
+            if(mili >= 999) {
+                mili = 0
+            milisec.innerText = `${mili.toString().padStart(2, '0')}`;
+        }
+        else {
+            mili++
+            milisec.innerText = `${mili.toString().padStart(2, '0')}`;
+        }  
+    resetbtn.addEventListener('click', () => {
+        mili = 0
+        milisec.innerText = mili 
+    })
+}
+        setInterval(milisecond, 0)
+
+        // seconds...........
+        let i = 0
+        const seconds = () => {
+            if(i >= 59) {
+            i = 0
+            sec.innerText = `${i.toString().padStart(2, '0')}`;
+        }
+        else {
+            i++
+            sec.innerText = `${i.toString().padStart(2, '0')}`;
+        }
+        }
+        setInterval(seconds, 1000)
+
+        // minutes............
+        let min = 0
+        const minutes = () => {
+            if(min >= 60) {
+                min = 0
+                minute.innerText = `${min.toString().padStart(2, '0')}`
+            }
+            else {
+                min++
+                minute.innerText = `${min.toString().padStart(2, '0')}`
+            }
+        }
+        setInterval(minutes, 60000)
+    
+        // hours..............
+        let h = 0
+        const hours = () => {
+            if(h >= 12) {
+                h = 1
+                hour.innerText = `${h.toString().padStart(2, '0')}`
+            }
+            else {
+                h++
+                hour.innerText = `${h.toString().padStart(2, '0')}`
+            }
+        }
+        setInterval(hours, 3540000)
+    }
+
+    startbtn.addEventListener('click', watch)
+
+    // reaset...
+    
+    // resetbtn.addEventListener('click', () => {
+    //     i = 0
+    //     milisec.innerText = reset 
+    // })
+
+    resetbtn.addEventListener('click', () => {
+        reset = '00'
+        sec.innerText = reset 
+    })
+    resetbtn.addEventListener('click', () => {
+        reset = '00'
+        minute.innerText = reset 
+    })
+    resetbtn.addEventListener('click', () => {
+        reset = '00'
+        hour.innerText = reset 
+    })
+    
+    
+
+</script>
+</body>
+</html>

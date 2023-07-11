@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+       
+const totalmarks = 4
+let obtMarks = +prompt("Please Enter Your GPA Number.")
+let percentage = (obtMarks / totalmarks) * 100
+document.write(`Your Percentage is '${percentage.toFixed(2)}''.`)
+
+
+switch (true) {
+    case percentage >= 90:
+    document.write(` Your Grade is 'A+'.`)
+        break;
+    case percentage >= 80:
+    document.write(` Your Grade is 'A'.`)
+        break;
+    case percentage >= 70:
+    document.write(` Your Grade is 'B+'.`)
+        break;
+    case percentage >= 60:
+    document.write(` Your Grade is 'B'.`)
+        break;
+    case percentage >= 50:
+    document.write(` Your Grade is 'C+'.`)
+        break;
+    case percentage >= 40:
+    document.write(` Your Grade is 'C'.`)
+        break;
+    case percentage >= 30:
+    document.write(` Your Grade is 'D+'.`)
+        break;
+    case percentage >= 20:
+    document.write(` Your Grade is 'D'.`)
+        break;
+    default:
+    document.write(` Your Grade is 'E'.`)
+
+}
+
+
+    </script>
+</body>
+</html>

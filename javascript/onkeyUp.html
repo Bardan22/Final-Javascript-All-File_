@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #paras {
+            height: 30px;
+            width: 200px;
+            background: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <!-- Password:
+        <input type="search" id="word"><br><br>
+        <p id="para"></p> -->
+        
+
+             search:
+             <input type="search" id="search">
+             <p id="text"></p>
+
+    </form>
+
+    <script>
+
+        // const text = document.getElementById('word')
+        // const para = document.getElementById('para')
+        // // console.log(para)
+        // text.addEventListener('keyup', () => {
+        //     const valueShow = text.value
+        //     // console.log(valueShow)
+        //     para.textContent = valueShow
+        // })
+
+        const search = document.getElementById('search')
+        const text1 = document.getElementById('text')
+
+        search.addEventListener('keyup', () => {
+            const valueShows = search.value
+            text1.textContent = valueShows
+        })
+
+
+    </script>
+</body>
+</html>

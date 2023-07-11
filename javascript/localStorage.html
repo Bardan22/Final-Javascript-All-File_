@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    
+
+    <script>
+        // local storage: It is the part of global window object which is used to store data locally on the browser. The data stored locally is only accessed by the origin of that webpage.
+
+        // Origin refers to the combination of protocal, hostname and port.
+
+        // kina localstorage ma stored gareko datalai Origin banayeko ho??
+        
+        // Jun Data localstorage ma stored xa, Euta Browser le multiple thousand of website open garxa vist garxa, so tyo local storage ma stored vayeko datalai aru originle aru url le access garna napaos vanera local storage ma vayeko data lai origin banayeko ho. kinavane data vaneko ta imortant kura haru hunxa. localstorage ko use garera manxele password auto fill garne banako hunxa password bar bar lekhirakhna naparos vanera login credintional haru rakhe ko hunxa yedi aru origin le access garna payo vane securiti ma issue auxa personal data haru chori huna sakxa..
+
+
+        // window.localStorage
+        // window not require to write before...
+        // eg:..
+        // key and value must be string. localstorage only accept strings data type to store value.
+        // if number store = "123" in string...
+
+        localStorage.setItem('key', 'Value')   // syntax...
+        localStorage.setItem('data', 'Hello From the local storage')   //we never store plain data in localstorage, we store data in JSON format... 
+        const show = localStorage.getItem('data')
+        // document.write(show)
+
+        // JSON -> Javascript Object Notation...
+        // this is looking like object. It is lightweight file. It is lightweight, efficient and fast to transfer from server to frontend.
+        // eg:
+         let details = {
+            "first_name": "Ram",
+            "last_name": "Shah",
+            "email": "abcdefg@gmail.com"
+         }
+
+        //  1. Convert JSON datato string, reason is localstorage can only store values in string / plain text.
+         const obj_to_str = JSON.stringify(details)
+        //  document.write(obj_to_str) 
+        // 2. Store the stringified JSON (JSON that has been converted into a string)
+        localStorage.setItem('info', obj_to_str) 
+        // 3. Get the data using key. The data we access is JSON that is in the form of string 
+        const data = localStorage.getItem('info')
+        // document.write(data)
+        // 4. We have to convert that "JSON string" to an "object" to access the data available in that JSON.
+        const str_to_obj = JSON.parse(data)
+        // 5. Now, You have the object. Use the values of the Object where necessary.
+        console.log(str_to_obj)
+        console.log(str_to_obj.email)  // to get email...
+
+    </script>
+</body>
+</html>

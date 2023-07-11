@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .container{
+            width: 40%;
+            background: rgb(208, 208, 208);
+            margin: auto;
+            margin-top: 20px;
+            height: 40%;
+            border-radius: 5px;
+        }
+
+        .put {
+            width: 50%;
+            margin: auto;
+            height: 20%;
+        }
+
+        .put input{
+            width: 300px;
+            height: 40px;
+            margin-top: 20px;
+            border: 3px solid rgb(231, 231, 231);
+            border-radius: 7px;
+            text-align: center;
+            padding: 10px;
+            font-size: large;
+            background: #504e4e;
+            color: white;
+            position: relative;
+        }
+
+        button{
+            width: 80px;
+            height: 35px;
+            background: #3d3d3d;
+            color: white;
+            border-radius: 5px;
+            border: 3px solid #3d3d3d;
+            margin: 20px;
+            margin-left: 43%;
+            cursor: pointer;
+        }
+
+        .content-box {
+            width: 80%;
+            /* height: auto; */
+            height: 50%;
+            background: rgb(255, 255, 255);
+            margin: auto;
+            border-radius: 5px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="put">
+            <input type="text" id="textFeild">
+        </div>
+        <button>Add</button>
+        <div class="content-box">
+
+        </div>
+    </div>
+
+
+    <script>
+
+        const btn = document.querySelector('button')
+        const contentBox = document.querySelector('.content-box')
+        const textfeild = document.querySelector('#textFeild')
+        
+        // textfeild.addEventListener('keyup', function(event) {
+            btn.addEventListener('click', function() {
+                const fillbox = textfeild.value
+                contentBox.textContent = fillbox
+                fillbox = ''
+            })
+        // })
+
+
+    </script>
+    
+</body>
+</html>
